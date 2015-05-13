@@ -268,7 +268,7 @@ do_git_build()
     rm -Rf "$KERL_BUILD_DIR/$3"
     mkdir -p "$KERL_BUILD_DIR/$3"
     cd "$KERL_BUILD_DIR/$3"
-    git clone -l "$KERL_GIT_DIR/$GIT" otp_src_git > /dev/null 2>&1
+    git clone --no-hardlinks "$KERL_GIT_DIR/$GIT" otp_src_git > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo "Error cloning local git repository"
         exit 1
